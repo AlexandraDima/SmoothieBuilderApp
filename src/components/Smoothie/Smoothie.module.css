@@ -1,0 +1,109 @@
+.Smoothie{
+    width: 100%;
+    height: 250px;  
+    overflow: hidden; 
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+   
+}
+
+
+ @media (min-width: 500px) and (min-height: 400px) {
+    .Smoothie {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+  
+@media (min-width:1000px) and (min-height: 700px) {
+   .Smoothie{
+        width: 600px;
+        height: 700px;
+
+    }  
+} 
+ 
+.glass {
+  height: 80%;
+  width: 30%;
+  box-shadow: inset -55px 0 #ffb5a7,  0 10px 20px -5px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  border: 2px solid white;
+  border-radius: 25px;
+  opacity: 0.9;
+  position: relative;
+  top:18%;
+  display: table;
+}
+
+.neck {
+  width: 70%;
+  height: 15%;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  position: absolute;
+  left: 15%;
+  top: -15%;
+  z-index: -1;
+  background: #f8edeb;
+  box-shadow: inset -55px 0 #ffb5a7;
+}
+
+.lid {
+  height: 10%;
+  width: 80%;
+  border-radius: 90px / 33px;
+  -moz-border-radius: 90px / 33px;
+  -webkit-border-radius: 90px / 33px;
+  border: 2px solid white;
+  background: #f8edeb;
+  position: absolute;
+  left: 10%;
+  box-shadow: inset -55px 0 #ffb5a7;
+}
+
+.lid.top {
+  top: -22%;
+  z-index: 2;
+}
+
+.lid.mid {
+  top: -18%;
+  z-index: 1;
+}
+.lid.bot {
+  top: -14%;
+}
+.ingredientsAll {
+  width: 100%;
+  height: 90%;
+ /*  position: absolute;
+  bottom: 0px; */
+  opacity: 0.9;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-end; */
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+/* .ingredientsNone {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0px;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column-reverse;
+} */
+
+.textMessage{
+  text-align: left;
+  padding-left: 10px;
+  color: #ee6055;
+}
+
+
