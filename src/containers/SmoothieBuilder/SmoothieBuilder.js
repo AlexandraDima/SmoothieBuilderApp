@@ -6,6 +6,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Smoothie/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
+
 //import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 const INGREDIENT_PRICES = {
@@ -96,7 +97,8 @@ class BurgerBuilder extends Component{
 
     //method to continue the order
     continueOrder = () => {
-      alert('You continue');
+     // alert('You continue');
+       
    /*    this.setState({loading: true }); */
      /*  const order = {
           ingredients: this.state.ingredients,
