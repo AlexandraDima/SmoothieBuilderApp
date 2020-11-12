@@ -11,8 +11,10 @@ function App() {
     <div >
       
       <Layout>
+  
         <Route path="/checkout" component={Checkout} />
-        <Route path="/" exact component={SmoothieBuilder} />
+       {/*  <Route path="/" exact component={SmoothieBuilder} />  */}
+        <SmoothieBuilder />
       </Layout> 
    
     </div>

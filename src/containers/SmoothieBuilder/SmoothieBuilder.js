@@ -96,9 +96,9 @@ class BurgerBuilder extends Component{
 
     //method to continue the order
     continueOrder = () => {
-      // alert('You continue');
-      /* this.setState({loading: true });
-      const order = {
+      alert('You continue');
+   /*    this.setState({loading: true }); */
+     /*  const order = {
           ingredients: this.state.ingredients,
           price: this.state.totalPrice,
           customer:{
@@ -115,9 +115,9 @@ class BurgerBuilder extends Component{
             .then(response => {
                 this.setState({loading:false, purchasing:false})
             })
-            .catch(error => {this.setState({loading:false, purchasing:false})});  */
-
-            const queryParams=[];
+            .catch(error => {this.setState({loading:false, purchasing:false})});   */
+        
+          /*   const queryParams=[];
             for(let i in this.state.ingredients){
                 queryParams.push(encodeURIComponent (i) + '=' + encodeURIComponent(this.state.ingredients[i]));
             }
@@ -125,7 +125,7 @@ class BurgerBuilder extends Component{
             this.props.history.push({
                 pathname:'/checkout',
                 search:'?' + queryString
-            });
+            }); */
     }
   
     render(){
