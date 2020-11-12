@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/drinks-order/static/css/main.81a0be5f.chunk.css",
+    "main.js": "/drinks-order/static/js/main.ee2e4e59.chunk.js",
+    "main.js.map": "/drinks-order/static/js/main.ee2e4e59.chunk.js.map",
+    "runtime-main.js": "/drinks-order/static/js/runtime-main.a406cc0c.js",
+    "runtime-main.js.map": "/drinks-order/static/js/runtime-main.a406cc0c.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/drinks-order/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.af46ab71.chunk.js": "/drinks-order/static/js/2.af46ab71.chunk.js",
+    "static/js/2.af46ab71.chunk.js.map": "/drinks-order/static/js/2.af46ab71.chunk.js.map",
+    "index.html": "/drinks-order/index.html",
+    "precache-manifest.19ec161c923b655d9f091d9bb8a52001.js": "/drinks-order/precache-manifest.19ec161c923b655d9f091d9bb8a52001.js",
+    "service-worker.js": "/drinks-order/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/drinks-order/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.81a0be5f.chunk.css.map": "/drinks-order/static/css/main.81a0be5f.chunk.css.map",
+    "static/js/2.af46ab71.chunk.js.LICENSE.txt": "/drinks-order/static/js/2.af46ab71.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/drinks-order/static/media/logo.f8385f67.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a406cc0c.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.af46ab71.chunk.js",
+    "static/css/main.81a0be5f.chunk.css",
+    "static/js/main.ee2e4e59.chunk.js"
+  ]
+}
