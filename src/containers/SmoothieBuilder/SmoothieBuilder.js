@@ -4,6 +4,9 @@ import BuildControls from '../../components/Smoothie/BuildControls/BuildControls
 import classes from './SmoothieBuilder.module.css';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Smoothie/OrderSummary/OrderSummary';
+import axios from '../../axios-orders';
+import Spinner from '../../components/UI/Spinner/Spinner';
+//import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 const INGREDIENT_PRICES = {
     spinach:10,
@@ -14,15 +17,21 @@ const INGREDIENT_PRICES = {
 class BurgerBuilder extends Component{
 
     state={
-        ingredients:{
-            spinach:0,
-            berries:0,
-            seeds:0,
-            vanilla:0
-        },
+        ingredients:null,
         totalPrice: 20,
         purchasable: false,
-        purchasing:false
+        purchasing:false,
+        loading:false,
+        error:false
+    }
+    componentDidMount(){
+        axios.get('https://react-smoothie-order.firebaseio.com/ingredients.json')
+                .then(response => {
+                    this.setState({ingredients:response.data});
+                })
+                .catch(error => {
+                    this.setState({error:true})
+                })
     }
     updatePurchaseState = (ingredients) =>{
         //sum up all the ingredients values
@@ -87,7 +96,36 @@ class BurgerBuilder extends Component{
 
     //method to continue the order
     continueOrder = () => {
-       alert('You continue');
+      // alert('You continue');
+      /* this.setState({loading: true });
+      const order = {
+          ingredients: this.state.ingredients,
+          price: this.state.totalPrice,
+          customer:{
+              name: 'Ale',
+              address: {
+                  street:'Testaddress1',
+                  country:'France'
+              },
+              email:'test@test.com'
+          },
+          deliveryMethod: 'fastest'
+      }
+         axios.post('/orders.json', order)
+            .then(response => {
+                this.setState({loading:false, purchasing:false})
+            })
+            .catch(error => {this.setState({loading:false, purchasing:false})});  */
+
+            const queryParams=[];
+            for(let i in this.state.ingredients){
+                queryParams.push(encodeURIComponent (i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+            }
+            const queryString = queryParams.join('&');
+            this.props.history.push({
+                pathname:'/checkout',
+                search:'?' + queryString
+            });
     }
   
     render(){
@@ -100,18 +138,21 @@ class BurgerBuilder extends Component{
             //console.log(disableInfo[key] <= 0)//True or false
               //{spinach:true, kale:false, .....}
         }
-      
-        return(
-                <div className="container-fluid">
-                <Modal show={this.state.purchasing} modalClosed={this.closeModal}>
-                    <OrderSummary 
-                        cancelOrder={this.closeModal} 
-                        continueOrder={this.continueOrder} 
-                        ingredients={this.state.ingredients}
-                        price={this.state.totalPrice.toFixed(2)}
-                    >
-                    </OrderSummary>
-                </Modal>
+        let orderSummary = null;
+        if(this.state.ingredients){
+        orderSummary = <OrderSummary 
+        cancelOrder={this.closeModal} 
+        continueOrder={this.continueOrder} 
+        ingredients={this.state.ingredients}
+        price={this.state.totalPrice.toFixed(2)}
+        >
+        </OrderSummary>
+        }
+       
+
+        let smoothie = <Spinner />
+        if(this.state.ingredients){
+            smoothie = (
                 <div className="row mx-auto ">
                 <div className={`col-md-6 pl-0 pr-0 ${classes.mainContainer} ${classes.left}`}>
                 <Smoothie ingredients={this.state.ingredients} />
@@ -127,10 +168,24 @@ class BurgerBuilder extends Component{
                     />
                 </div>
                 </div>
+            )
+        }
+      
+        if(this.state.loading){
+            orderSummary= this.state.error ? "Ingredients can't be loaded" : <Spinner />
+        }
+
+        return(
+                <div className="container-fluid">
+                <Modal show={this.state.purchasing} modalClosed={this.closeModal}>
+                    {orderSummary}
+                </Modal>
+                {smoothie}
                 </div>
 
         );
     }
 }
 
+//export default withErrorHandler(BurgerBuilder, axios);
 export default BurgerBuilder;
