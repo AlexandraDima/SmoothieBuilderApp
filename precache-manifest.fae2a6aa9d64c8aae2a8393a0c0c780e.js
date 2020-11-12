@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7536252e7d28677dd29d73eb3a3e50e5",
+    "revision": "9a19ea1bc5d9cfecaade29d23ad07635",
     "url": "/drinks-order/index.html"
   },
   {
-    "revision": "084c4a71d31b24303bba",
+    "revision": "7d5982252bfce0a757b7",
     "url": "/drinks-order/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "dab9ca4a59d9b3117707",
+    "revision": "dc6905639c891a26813b",
     "url": "/drinks-order/static/css/main.81a0be5f.chunk.css"
   },
   {
-    "revision": "084c4a71d31b24303bba",
-    "url": "/drinks-order/static/js/2.af46ab71.chunk.js"
+    "revision": "7d5982252bfce0a757b7",
+    "url": "/drinks-order/static/js/2.e67ac332.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/drinks-order/static/js/2.af46ab71.chunk.js.LICENSE.txt"
+    "url": "/drinks-order/static/js/2.e67ac332.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dab9ca4a59d9b3117707",
-    "url": "/drinks-order/static/js/main.ee2e4e59.chunk.js"
+    "revision": "dc6905639c891a26813b",
+    "url": "/drinks-order/static/js/main.845c7563.chunk.js"
   },
   {
     "revision": "8c2f27064d94d0d07edb",
